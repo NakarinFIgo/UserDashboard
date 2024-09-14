@@ -9,8 +9,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App: React.FC = () => {
-  const isAuthenticated = true; // This should be managed properly in a real application
-
+  const isAuthenticated = true; 
+  
   return (
     <Router>
       <ToastContainer/>
