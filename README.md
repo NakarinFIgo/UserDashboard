@@ -6,8 +6,9 @@ A simple web application with a login page and user directory. Users can log in,
 
 ## Setup
 1. Clone the repository.
-2. Run `npm install` to install dependencies.
-3. Run `npm start` to start the application.
+2. Run `cd vite-project` to change Directory
+3. Run `npm install` to install dependencies.
+4. Run `npm run dev` to start the application.
 
 ## Technologies
 - React
@@ -17,5 +18,6 @@ A simple web application with a login page and user directory. Users can log in,
 ## Features
 - Login with mock credentials.
 - Display and filter user list.
+- Sorting data in table. 
 - View detailed user information.
 
