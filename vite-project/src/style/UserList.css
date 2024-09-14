@@ -1,13 +1,85 @@
+.user-list {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.table th {
+  cursor: pointer;
+  background-color: #f8f9fa;
+}
+
+.table th:hover {
+  background-color: #e9ecef;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tr:hover {
+  background-color: #f1f1f1;
+}
+
 .sort-icon {
-  margin-left: 8px;
   display: inline-block;
-  transition: opacity 0.2s ease;
+  margin-left: 5px;
+  vertical-align: middle;
+  transition: transform 0.3s;
 }
 
-.sort-icon.ascending {
-  opacity: 1;
+.sort-icon svg {
+  fill: currentColor;
 }
 
-.sort-icon.descending {
-  opacity: 1;
+@media (max-width: 768px) {
+  .table th,
+  .table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .table {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; 
+  }
+
+  .table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
 }

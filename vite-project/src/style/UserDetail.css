@@ -1,12 +1,18 @@
 .user-detail {
-  max-width: 700px;
-  margin: 100px auto  ;
+  max-width: 600px;
+  margin: 100px auto;
   padding: 20px;
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
+}
+
+.detail-container {
+  text-align: left;
+  padding: 0px 0px 0px 210px; 
+  margin-top: 20px;
 }
 
 .back-button {
@@ -18,16 +24,13 @@
   font-size: 1.2rem;
   cursor: pointer;
   color: #007bff;
-  padding: 10px; 
-  border-radius: 100%; 
-  transition: background-color 0.3s,
+  padding: 10px;
+  border-radius: 100%;
+  transition: background-color 0.3s;
 }
 
 .back-button:hover {
   background-color: #f0f0f0;
-}
-
-.back-button:hover {
   text-decoration: underline;
 }
 
@@ -46,11 +49,69 @@
 }
 
 .user-detail-info {
-  font-size: 1rem;
+  font-size: 20px;
   color: #666;
   margin-bottom: 8px;
 }
 
 .user-detail-info span {
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .user-detail {
+    margin: 50px auto;
+    padding: 15px;
+    max-width: 90%; 
+  }
+
+  .detail-container {
+    padding: 0; 
+    margin-top: 10px;
+  }
+
+  .back-button {
+    top: 15px;
+    left: 15px;
+    font-size: 1rem; 
+  }
+
+  .user-detail-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .user-detail-name {
+    font-size: 1.5rem;
+  }
+
+  .user-detail-info {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-detail {
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .back-button {
+    top: 10px;
+    left: 10px;
+    font-size: 0.9rem; 
+  }
+
+  .user-detail-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .user-detail-name {
+    font-size: 1.2rem;
+  }
+
+  .user-detail-info {
+    font-size: 16px;
+  }
 }

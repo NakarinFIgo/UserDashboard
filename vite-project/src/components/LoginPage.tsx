@@ -2,19 +2,22 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { mockCredentials } from '../data/mockData';
-import '../style/LoginPage.css'; // Import the CSS file here
+import '../style/LoginPage.css'; 
+import { toast } from 'react-toastify';
 
 const LoginPage: React.FC = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const navigate = useNavigate()
 
   const handleLogin = () => {
     if (username === mockCredentials.username && password === mockCredentials.password) {
-      navigate('/dashboard');
+      toast.success('Welcome to Admin Dashboard !')
+      navigate('/dashboard')
     } else {
-      setError('Invalid username or password');
+      toast.error('Invalid username or password')
+      setError('Invalid username or password')
     }
   };
 

@@ -8,6 +8,7 @@ interface User {
   image: string;
   user: string;
   email: string;
+  phone: string;
   id: number;
   lorem: string;
 }
@@ -82,124 +83,106 @@ const UserList: React.FC<UserListProps> = ({ users }) => {
         className="search-input"
       />
 
-      <table className="table">
-        <thead>
-          <tr>
-          <th onClick={() => handleSort("id")}>
-              ID
-              <span className="sort-icon">
-                {sortConfig?.key === "id" &&
-                  (sortConfig.direction === "ascending" ? (
-                    <svg
-                      width="20"
-                      height="20"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M6 10l6 6 6-6H6z" />
-                    </svg> 
-                  ) : (
-                    <svg
-                      width="20"
-                      height="20"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M6 14l6-6 6 6H6z" />
-                    </svg> 
-                  ))}
-              </span>
-            </th>
-            <th onClick={() => handleSort("name")}>
-              Name
-              <span className="sort-icon">
-                {sortConfig?.key === "name" &&
-                  (sortConfig.direction === "ascending" ? (
-                    <svg
-                      width="20"
-                      height="20"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M6 10l6 6 6-6H6z" />
-                    </svg> 
-                  ) : (
-                    <svg
-                      width="20"
-                      height="20"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M6 14l6-6 6 6H6z" />
-                    </svg> 
-                  ))}
-              </span>
-            </th>
-            <th onClick={() => handleSort("user")}>
-              Username
-              <span className="sort-icon">
-                {sortConfig?.key === "user" &&
-                  (sortConfig.direction === "ascending" ? (
-                    <svg
-                      width="20"
-                      height="20"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M6 10l6 6 6-6H6z" />
-                    </svg> 
-                  ) : (
-                    <svg
-                      width="20"
-                      height="20"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M6 14l6-6 6 6H6z" />
-                    </svg> 
-                  ))}
-              </span>
-            </th>
-            <th onClick={() => handleSort("email")}>
-              Email
-              <span className="sort-icon">
-                {sortConfig?.key === "email" &&
-                  (sortConfig.direction === "ascending" ? (
-                    <svg
-                      width="20"
-                      height="20"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M6 10l6 6 6-6H6z" />
-                    </svg> 
-                  ) : (
-                    <svg
-                      width="20"
-                      height="20"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M6 14l6-6 6 6H6z" />
-                    </svg> 
-                  ))}
-              </span>
-            </th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sortedUsers.map((user) => (
-            <tr key={user.id} onClick={() => handleRowClick(user.id)}>
-              <td>{user.id}</td>
-              <td>{user.name}</td>
-              <td>{user.user}</td>
-              <td>{user.email}</td>
-              <td>{user.lorem}</td>
+      <div className="table-wrapper">
+        <table className="table">
+          <thead>
+            <tr>
+              <th onClick={() => handleSort("id")}>
+                ID
+                <span className="sort-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d={
+                        sortConfig?.key === "id" &&
+                        sortConfig.direction === "ascending"
+                          ? "M6 10l6 6 6-6H6z"
+                          : "M6 14l6-6 6 6H6z"
+                      }
+                    />
+                  </svg>
+                </span>
+              </th>
+              <th onClick={() => handleSort("name")}>
+                Name
+                <span className="sort-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d={
+                        sortConfig?.key === "name" &&
+                        sortConfig.direction === "ascending"
+                          ? "M6 10l6 6 6-6H6z"
+                          : "M6 14l6-6 6 6H6z"
+                      }
+                    />
+                  </svg>
+                </span>
+              </th>
+              <th onClick={() => handleSort("user")}>
+                Username
+                <span className="sort-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d={
+                        sortConfig?.key === "user" &&
+                        sortConfig.direction === "ascending"
+                          ? "M6 10l6 6 6-6H6z"
+                          : "M6 14l6-6 6 6H6z"
+                      }
+                    />
+                  </svg>
+                </span>
+              </th>
+              <th onClick={() => handleSort("email")}>
+                Email
+                <span className="sort-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d={
+                        sortConfig?.key === "email" &&
+                        sortConfig.direction === "ascending"
+                          ? "M6 10l6 6 6-6H6z"
+                          : "M6 14l6-6 6 6H6z"
+                      }
+                    />
+                  </svg>
+                </span>
+              </th>
+              <th>Status</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {sortedUsers.map((user) => (
+              <tr key={user.id} onClick={() => handleRowClick(user.id)}>
+                <td>{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.user}</td>
+                <td>{user.email}</td>
+                <td>{user.lorem}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
